@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random User</title>
+
+    <link rel="stylesheet" href="./random-user.component.css">
+    <script src="../lib/http-client.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<main id="randomUserComponent">
+    <div class="container">
+        <button v-on:click="getRandomUsers">Get Random Users</button>
+
+        <br>
+
+        <div class="users-container">
+            <div class="user-card" v-for="user in userList"
+                 :gender="user?.gender"
+                 :key="user?.id?.value">
+                <img :src="user?.picture?.large" alt="avatar">
+
+                <br>
+
+                <div><strong>First name: </strong>{{user?.name?.first}}</div>
+                <div><strong>Last name: </strong>{{user?.name?.last}}</div>
+                <div><strong>Email: </strong>{{user?.email}}</div>
+                <div><strong>Gender: </strong>{{user?.gender}}</div>
+                <div><strong>Birthday: </strong>{{user?.dob?.date | date}}</div>
+
+                <br>
+
+                <button>View User</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="./random-user.component.js"></script>
+</body>
+</html>

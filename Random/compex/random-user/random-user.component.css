@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container button {
+    background-color: tomato;
+    color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 15px;
+    max-width: fit-content;
+}
+
+.users-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.user-card {
+    border-radius: 4px;
+    box-shadow: 0 8px 8px -6px rgba(0, 0, 0, .6);
+    padding: 15px;
+    min-height: 180px;
+}
+
+.user-card[gender='male'] {
+    background-color: skyblue;
+}
+
+.user-card[gender='female'] {
+    background-color: pink;
+}
